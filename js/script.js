@@ -4,7 +4,7 @@ const gifButton = document.querySelector("#fetch-gif-btn");
 const gifContainer = document.querySelector("#gif-container");
 
 gifButton.addEventListener("click", async () => {
-    const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=cats&limit=8`;
+    const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=genshin%20impact&limit=8`;
 
     try {
         const response = await fetch(endpoint);
