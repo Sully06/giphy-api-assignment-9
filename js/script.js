@@ -2,9 +2,14 @@ const apiKey = "sN7xRbvivve6Jd5Ohun0XXnBH6aFgMYB";
 
 const gifButton = document.querySelector("#fetch-gif-btn");
 const gifContainer = document.querySelector("#gif-container");
+const searchInput = document.querySelector("#search-input");
 
 gifButton.addEventListener("click", async () => {
-    const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=genshin%20impact&limit=8`;
+    
+const searchTerm = searchInput.value.trim() || "Genshin Impact";
+
+const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${encodeURIComponent(searchTerm)}&limit=8`;
+
 
     try {
         const response = await fetch(endpoint);
